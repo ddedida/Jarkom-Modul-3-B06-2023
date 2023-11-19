@@ -148,10 +148,13 @@ Lakukan konfigurasi sesuai dengan peta yang sudah diberikan. Pada soal diminta u
 **Penyelesaian:**
 
 - file `canyon.b06.com`:
+  
   ![image](https://github.com/ddedida/Jarkom-Modul-3-B06-2023/assets/108203648/cc13ff78-9fa6-4c73-91da-da3de96d87be)
 
 - file `channel.b06.com`:
+  
   ![image](https://github.com/ddedida/Jarkom-Modul-3-B06-2023/assets/108203648/4b013572-2772-49aa-99c7-090d07b7cc87)
+  
 - Testing apakah dns bisa dilakukan ping atau tidak:
   ![image](https://github.com/ddedida/Jarkom-Modul-3-B06-2023/assets/108203648/4f9fbbaa-5c8b-4578-9e4c-4f4a6fd30450)
   ![image](https://github.com/ddedida/Jarkom-Modul-3-B06-2023/assets/108203648/8266851d-362e-485e-9567-3a39ad338806)
@@ -164,6 +167,7 @@ Lakukan konfigurasi sesuai dengan peta yang sudah diberikan. Pada soal diminta u
 Semua CLIENT harus menggunakan konfigurasi dari DHCP Server. Dimana client yang melalui Switch3 mendapatkan range IP dari `192.181.3.16 - 192.181.3.32` dan `192.181.3.64 - 192.181.3.80`.
 
 **Penyelesaian:**
+
 **Himmel (DHCP Server)**:
 
 - file `dhcpd.conf`:
@@ -241,7 +245,7 @@ Semua CLIENT harus menggunakan konfigurasi dari DHCP Server. Dimana client yang 
   INTERFACESv4="eth0"
   ```
 
-**Aura (DHCP Relay)**
+**Aura (DHCP Relay):**
 
 - install untuk DHCP Relay:
   ```
@@ -259,7 +263,7 @@ Semua CLIENT harus menggunakan konfigurasi dari DHCP Server. Dimana client yang 
   net.ipv4.ip_forward=1
   ```
 
-**Client**
+**Client:**
 
 - file `interfaces`:
   ```
@@ -283,6 +287,7 @@ Testing IP
 Client yang melalui Switch4 mendapatkan range IP dari `192.181.4.12 - 191.181.4.20` dan `192.181.4.160 - 192.181.4.168`.
 
 **Penyelesaian:**
+
 Dalam file `dhcpd.conf`:
 
 ```
@@ -305,6 +310,7 @@ Dalam file `dhcpd.conf`:
 Client mendapatkan DNS dari Heiter dan dapat terhubung dengan internet melalui DNS tersebut.
 
 **Penyelesaian:**
+
 Dalam file `dhcpd.conf`:
 
 ```
@@ -411,7 +417,9 @@ Kepala suku dari Bredt Region memberikan resource server sebagai berikut:
 - Linie, 2GB, 2vCPU, dan 50 GB SSD.
 - Lugner 1GB, 1vCPU, dan 25 GB SSD.
 
-Aturlah agar Eisen dapat bekerja dengan maksimal, lalu lakukan testing dengan 1000 request dan 100 request/second
+Aturlah agar Eisen dapat bekerja dengan maksimal, lalu lakukan testing dengan 1000 request dan 100 request/second. Berikut merupakan hasil testingnya:
+
+![2023-11-19 (2)](https://github.com/ddedida/Jarkom-Modul-3-B06-2023/assets/108203648/1060c750-0790-4f6b-a1f7-c965e62546a5)
 
 <br/>
 <br/>
@@ -428,12 +436,16 @@ c. Grafik request per second untuk masing masing algoritma.
 
 d. Analisis
 
+Hasil testing, grafik, dan analisis terdapat di [Grimoire B06](https://docs.google.com/document/d/1UOOTwVwUrWta0TOeqcGNjOTUtFy2QH-yGEG2rMGKP-8/edit).
+
 <br/>
 <br/>
 
 ## Nomor 9
 
 Dengan menggunakan algoritma Round Robin, lakukan testing dengan menggunakan 3 worker, 2 worker, dan 1 worker sebanyak 100 request dengan 10 request/second, kemudian tambahkan grafiknya pada grimoire.
+
+Hasil testing, grafik, dan analisis terdapat di [Grimoire B06](https://docs.google.com/document/d/1UOOTwVwUrWta0TOeqcGNjOTUtFy2QH-yGEG2rMGKP-8/edit).
 
 <br/>
 <br/>
@@ -616,6 +628,8 @@ c. GET /auth/me
 
   ![image](https://github.com/Rencist/A07_Sisop_Individu_Modul_3/assets/91055469/09858db8-953a-4138-ab5a-488c79f41aa7)
 
+Hasil testing terdapat di [Grimoire B06](https://docs.google.com/document/d/1UOOTwVwUrWta0TOeqcGNjOTUtFy2QH-yGEG2rMGKP-8/edit).
+
 <br/>
 <br/>
 
@@ -663,6 +677,8 @@ Untuk memastikan ketiganya bekerja sama secara adil untuk mengatur Riegel Channe
   ```
 
 - Ubah isi value dari pm untuk testing hasil dan bandingkan perbedaan nya
+
+Hasil testing, grafik, dan analisis terdapat di [Grimoire B06](https://docs.google.com/document/d/1UOOTwVwUrWta0TOeqcGNjOTUtFy2QH-yGEG2rMGKP-8/edit).
 
 <br/>
 <br/>
