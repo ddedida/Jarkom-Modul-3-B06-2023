@@ -1,0 +1,9 @@
+zone "canyon.b06.com" {
+        type master;
+        file "/etc/bind/jarkom/canyon.b06.com";
+};
+
+zone "channel.b06.com" {
+        type master;
+        file "/etc/bind/jarkom/channel.b06.com";
+};

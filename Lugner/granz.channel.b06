@@ -1,0 +1,44 @@
+server {
+
+
+        listen 80;
+
+
+        root /var/www/granz.channel.b06;
+
+
+        index index.php index.html index.htm;
+
+        server_name _;
+
+
+        location / {
+
+                        try_files $uri $uri/ /index.php?$query_string;
+
+        }
+
+
+        # pass PHP scripts to FastCGI server
+
+        location ~ \.php$ {
+
+        include snippets/fastcgi-php.conf;
+
+        fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
+
+        }
+
+
+ location ~ /\.ht {
+
+                        deny all;
+
+        }
+
+
+        error_log /var/log/nginx/granz.channel.b06_error.log;
+
+        access_log /var/log/nginx/granz.channel.b06_access.log;
+
+ }
