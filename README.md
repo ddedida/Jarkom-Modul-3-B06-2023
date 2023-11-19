@@ -321,3 +321,46 @@ subnet 192.181.4.0 netmask 255.255.255.0 {
   max-lease-time 5760
 }
 ```
+
+
+## Nomor 6
+Pada masing-masing worker PHP, lakukan konfigurasi virtual host untuk website berikut dengan menggunakan php 7.3.
+
+**Penyelesaian:**
+- Lakukan script dibawah ini:
+  ```
+  apt-get update
+  apt-get install nginx php php-fpm -y
+  apt-get install wget
+  apt-get install unzip
+  apt-get install lynx -y
+
+  wget -O php-granz-channel.zip "https://drive.google.com/uc?export=download&id=1ViSkRq7SmwZ$unzip php-granz-channel.zip
+  rm -r php-granz-channel.zip
+  mkdir /var/www/granz.channel.b06
+  ```
+- Kemudian buat file `granz.channle.b06`:
+  ```
+  server {
+        listen 80;
+        root /var/www/granz.channel.b06;
+        index index.php index.html index.htm;
+        server_name _;
+        location / {
+                        try_files $uri $uri/ /index.php?$query_string;
+        }
+        # pass PHP scripts to FastCGI server
+        location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
+        }
+  
+ 	location ~ /\.ht {
+                        deny all;
+        }
+        error_log /var/log/nginx/granz.channel.b06_error.log;
+        access_log /var/log/nginx/granz.channel.b06_access.log;
+  }
+  ```
+- Lakukan `service nginx restart` dan coba lakukan `lynx localhost` maka hasilnya:
+  ![image](https://github.com/ddedida/Jarkom-Modul-3-B06-2023/assets/108203648/9e191de7-13da-4b59-9e38-e6d0f0854063)
